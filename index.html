@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s),
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com;
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P6C4KN9W');
+    </script>
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bruno Leonhard | Tracking Lab</title>
+
     <style>
         :root {
             --bg-color: #0f172a;
@@ -46,7 +53,6 @@
             position: relative;
         }
 
-        /* Container da Foto com Link */
         .photo-wrapper {
             position: relative;
             width: 140px;
@@ -68,7 +74,6 @@
             border-color: var(--linkedin-blue);
         }
 
-        /* Ícone do LinkedIn */
         .linkedin-badge {
             position: absolute;
             bottom: 5px;
@@ -87,7 +92,7 @@
             border: 2px solid var(--card-bg);
         }
 
-        h1 { font-size: 1.5rem; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+        h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
         p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem; }
 
         .button-group { display: flex; flex-direction: column; gap: 12px; }
@@ -116,24 +121,25 @@
             color: white;
             border-radius: 8px;
             display: none;
-            animation: fadeIn 0.3s ease;
             z-index: 100;
         }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
+
 <body>
+
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6C4KN9W"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="profile-container">
-        <!-- Foto com Link e Badge LinkedIn -->
         <div class="photo-wrapper">
             <a href="https://www.linkedin.com/in/bruno-leonhard/" target="_blank">
-                <img src="https://media.licdn.com/dms/image/v2/D4D03AQEgrK029kZlHw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731957213356?e=1771459200&v=beta&t=FgSE5hhu3yZ7PQtrRrZ8OaD0GrH-h9sKzzSrn8oNHZ8" alt="Bruno Leonhard" class="profile-pic">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQEgrK029kZlHw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731957213356?e=1771459200&v=beta&t=FgSE5hhu3yZ7PQtrRrZ8OaD0GrH-h9sKzzSrn8oNHZ8" 
+                     alt="Bruno Leonhard" class="profile-pic">
                 <div class="linkedin-badge">in</div>
             </a>
         </div>
@@ -154,17 +160,18 @@
         function track(eventName, message) {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': eventName,
-                'timestamp': new Date().toISOString()
+                event: eventName,
+                timestamp: new Date().toISOString()
             });
 
             const alert = document.getElementById('status-alert');
             alert.innerText = "🚀 " + message;
             alert.style.display = 'block';
-            
-            setTimeout(() => { alert.style.display = 'none'; }, 2500);
-            console.log("Evento enviado:", eventName);
+            setTimeout(() => alert.style.display = 'none', 2500);
+
+            console.log('Evento enviado:', eventName);
         }
     </script>
+
 </body>
 </html>
